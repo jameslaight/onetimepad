@@ -11,7 +11,7 @@ PROGRAMS
 *ngrm - ngrm [word]: expend all characters in [word], destroying all the first of those same characters in the gate. [word] must be a valid english word. all characters of [word] must be present in the gate
 mu2t - mu2t [c] [word]: expend all characters in [word], destroying first (n - 2) [c] characters in the gate (where n is the length of [word]. [word] must be a valid english word
 *rot1 - rot1: encrypt the gate with the ROT1 cipher
-repl - repl [a] [b]: replace all [a] in the gate with [b]. [a] and [b] must be characters
+*repl - repl [a] [b]: replace all [a] in the gate with [b]. [a] and [b] must be characters
 boom - boom [c]: expend [c] to destroy the characters either side of the first [c] in the gate
 lngx - lngx [a] [b] [word]: expend all characters in [word] to destroy first [a] and [b] in the gate. [word] must be a valid 5+ letter english word
 3rrr - 3rrr [c] [word]: expend all characters in [word] to destroy first [c] in the gate. ([c] does not have to be in [word])
