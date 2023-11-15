@@ -33,7 +33,7 @@ public class Main {
 		System.out.println("< WELCOME >" +
 				"\nhack thru all " + maxLevel + " GATEs, formed of characters" +
 				"\neach GATE you get letters a-z stored in your CLIP" +
-				"\nuse the 'x [char] [word]' to destroy [char] in the GATE" +
+				"\nuse the 'x [char] [word]' command to destroy [char] in the GATE" +
 				"\nbeware, [char] must be in [word] and all letters in [word] are removed from your CLIP" +
 				"\n! REMEMBER 'PANIC' COMMAND TO ABORT IF A GATE TRAPS YOU !");
 

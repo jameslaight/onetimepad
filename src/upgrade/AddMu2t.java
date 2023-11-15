@@ -12,7 +12,7 @@ public class AddMu2t extends Upgrade {
 
 	@Override
 	public String getDescription() {
-		return "damages the same character based on the length of a word given to it";
+		return "(program) damages the same character based on the length of a word given to it";
 	}
 
 	@Override
