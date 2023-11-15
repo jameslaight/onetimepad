@@ -84,6 +84,10 @@ public class Gate {
 		return false;
 	}
 
+	public char[] getCode() {
+		return code;
+	}
+
 	public String getDisplay() {
 		StringBuilder builder = new StringBuilder();
 
