@@ -10,7 +10,12 @@ public class Gate {
 		code = new char[3 + difficulty];
 
 		List<Character> pool = new ArrayList<>();
-		for (char c = 'a'; c <= 'z'; c++) pool.add(c);
+		boolean q = new Random().nextBoolean(); //if true, q is added, else u is added (these are effectively the same character)
+		for (char c = 'a'; c <= 'z'; c++) {
+			if (c == 'q' && !q || c == 'u' && q) continue; //checks for adding correct character based on 'q'
+
+			pool.add(c);
+		}
 		Collections.shuffle(pool);
 
 		for (int i = 0; i < code.length; i++) {

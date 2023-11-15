@@ -12,7 +12,7 @@ public class Main {
 	public void run() {
 		Scanner scanner = new Scanner(System.in);
 
-		for (int level = 1; level <= 15; level++) {
+		for (int level = 1; level <= 10; level++) {
 			Fight fight = new Fight(level);
 
 			while (fight.getGate().isAlive()) {
