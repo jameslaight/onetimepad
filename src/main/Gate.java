@@ -7,19 +7,33 @@ public class Gate {
 	private final char[] code;
 
 	public Gate(int difficulty) {
-		code = new char[3 + difficulty];
+		Random random = new Random();
+		List<Character> chars = new ArrayList<>();
 
-		List<Character> pool = new ArrayList<>();
-		boolean q = new Random().nextBoolean(); //if true, q is added, else u is added (these are effectively the same character)
+		List<Character> notAdded = new ArrayList<>();
 		for (char c = 'a'; c <= 'z'; c++) {
-			if (c == 'q' && !q || c == 'u' && q) continue; //checks for adding correct character based on 'q'
-
-			pool.add(c);
+			if (c != 'q') notAdded.add(c);
 		}
-		Collections.shuffle(pool);
 
-		for (int i = 0; i < code.length; i++) {
-			code[i] = pool.get(i);
+		for (int i = 0; i < difficulty + 3; i++) {
+			char added = notAdded.remove(random.nextInt(notAdded.size()));
+			chars.add(added);
+		}
+
+		int hard = difficulty / 2;
+		for (int i = 0; i < hard; i++) {
+			char added;
+			if (random.nextInt(5) == 0) added = 'q';
+			else added = chars.get(random.nextInt(chars.size()));
+
+			chars.add(added);
+		}
+
+		Collections.shuffle(chars);
+
+		code = new char[chars.size()];
+		for (int i = 0; i < chars.size(); i++) {
+			code[i] = chars.get(i);
 		}
 	}
 
