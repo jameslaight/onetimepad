@@ -2,6 +2,7 @@ package main;
 
 import program.Program;
 import upgrade.Upgrade;
+import upgrade.Vowels;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,6 +19,7 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 
 		List<Upgrade> upgrades = new ArrayList<>(); //all upgrades collected by the user
+		upgrades.add(new Vowels());
 
 		for (int level = 1; level <= 10; level++) {
 			Fight fight = new Fight(level);
@@ -25,8 +27,8 @@ public class Main {
 			upgrades.forEach(u -> u.apply(fight)); //apply upgrades to fight
 
 			while (fight.getGate().isAlive()) {
-				System.out.println("\t" + fight.getGate().getDisplay());
-				System.out.println(fight.getClip().getDisplay());
+				System.out.println("GATE:\t" + fight.getGate().getDisplay());
+				System.out.println("CLIP: " + fight.getClip().getDisplay());
 
 				String[] split = scanner.nextLine().split(" ");
 				String programName = split[0];
