@@ -2,9 +2,11 @@ package main;
 
 public abstract class Program {
 
+	private final Fight fight;
 	private final String name;
 
-	public Program(String name) {
+	public Program(Fight fight, String name) {
+		this.fight = fight;
 		this.name = name;
 	}
 
