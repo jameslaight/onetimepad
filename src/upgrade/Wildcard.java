@@ -11,7 +11,7 @@ public class Wildcard extends Upgrade {
 
 	@Override
 	public String getDescription() {
-		return "(clip) adds one wildcard (*) to the clip";
+		return "(clip) adds one wildcard (*) to the clip (used automatically)";
 	}
 
 	@Override
