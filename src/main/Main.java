@@ -22,7 +22,8 @@ public class Main {
 				new AddSnip(),
 				new AsAbove(),
 				new SoBelow(),
-				new Vowels()
+				new Vowels(),
+				new Wildcard()
 		)); //all upgrades that are yet to be acquired
 		Collections.shuffle(shop); //these are given in a random order
 
