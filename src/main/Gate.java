@@ -7,7 +7,7 @@ public class Gate {
 	private final char[] code;
 
 	public Gate(int difficulty) {
-		code = new char[3 + difficulty];
+		code = new char[3 + difficulty * 2];
 
 		List<Character> pool = new ArrayList<>();
 		boolean q = new Random().nextBoolean(); //if true, q is added, else u is added (these are effectively the same character)
