@@ -28,4 +28,14 @@ public class Gate {
 		return false;
 	}
 
+	public String getDisplay() {
+		StringBuilder builder = new StringBuilder();
+
+		builder.append(">  > >>");
+		for (char c : code) builder.append(c);
+		builder.append(" << <  <");
+
+		return builder.toString();
+	}
+
 }
