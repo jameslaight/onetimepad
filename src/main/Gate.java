@@ -18,4 +18,14 @@ public class Gate {
 		}
 	}
 
+	public boolean isAlive() {
+		for (char c : code) {
+			if (c != '_') {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 }
