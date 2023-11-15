@@ -1,5 +1,6 @@
 package program;
 
+import main.Dictionary;
 import main.Fight;
 
 public class X extends Program { //needed to be short for a multiuse program, no inspiration taken from social media sites run by megalomaniacs
@@ -13,6 +14,8 @@ public class X extends Program { //needed to be short for a multiuse program, no
 		if (args.length != 2) return false;
 
 		String strTarget = args[0], word = args[1];
+
+		if (!Dictionary.isWord(word)) return false; //ensure word is valid word
 
 		if (strTarget.length() != 1) return false;
 

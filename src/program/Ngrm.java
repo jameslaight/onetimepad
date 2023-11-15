@@ -1,5 +1,6 @@
 package program;
 
+import main.Dictionary;
 import main.Fight;
 
 public class Ngrm extends Program {
@@ -13,6 +14,8 @@ public class Ngrm extends Program {
 		if (args.length != 1) return false;
 
 		String word = args[0];
+
+		if (!Dictionary.isWord(word)) return false;
 
 		if (!fight.getClip().has(word)) return false;
 
