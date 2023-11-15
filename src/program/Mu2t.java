@@ -39,7 +39,7 @@ public class Mu2t extends Program {
 			fight.getGate().damageFirst(target);
 		}
 
-		return new Result(true, "destroyed " + count + " '" + target + (count != 1 ? "s" : ""));
+		return new Result(true, "destroyed " + count + " '" + target + "'" + (count != 1 ? "s" : ""));
 	}
 
 }
