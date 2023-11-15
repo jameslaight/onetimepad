@@ -1,4 +1,6 @@
-package main;
+package program;
+
+import main.Fight;
 
 public abstract class Program {
 

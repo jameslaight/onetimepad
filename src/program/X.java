@@ -1,6 +1,7 @@
-package main;
+package program;
 
-import java.util.Arrays;
+import main.Fight;
+
 import java.util.HashMap;
 import java.util.Map;
 

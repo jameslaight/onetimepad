@@ -1,5 +1,8 @@
 package main;
 
+import program.Program;
+import program.X;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

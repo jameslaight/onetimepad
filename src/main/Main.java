@@ -1,5 +1,7 @@
 package main;
 
+import program.Program;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
