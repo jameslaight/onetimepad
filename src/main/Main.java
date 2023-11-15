@@ -27,7 +27,20 @@ public class Main {
 		)); //all upgrades that are yet to be acquired
 		Collections.shuffle(shop); //these are given in a random order
 
-		for (int level = 1; level <= 10; level++) {
+		int maxLevel = 10;
+		System.out.println("< WELCOME >" +
+				"\nhack thru all " + maxLevel + " GATEs, formed of characters" +
+				"\neach GATE you get letters a-z stored in your CLIP" +
+				"\nuse the 'x [char] [word]' to destroy [char] in the GATE" +
+				"\nbeware, [char] must be in [word] and all letters in [word] are removed from your CLIP" +
+				"\n! REMEMBER 'PANIC' COMMAND TO ABORT IF A GATE TRAPS YOU !");
+
+		int level = 1;
+		loop:
+		while (true) {
+			System.out.println("\n< GATE " + level + "/" + maxLevel + " >");
+
+			//region fight
 			Fight fight = new Fight(level);
 
 			upgrades.forEach(u -> u.apply(fight)); //apply upgrades to fight
@@ -36,7 +49,15 @@ public class Main {
 				System.out.println("\nGATE:\t" + fight.getGate().getDisplay());
 				System.out.println("CLIP: " + fight.getClip().getDisplay());
 
-				String[] split = scanner.nextLine().split(" ");
+				String input = scanner.nextLine();
+
+				if (input.equals("PANIC")) {
+					System.out.println("! PANIC SEQUENCE INITIATED, TERMINATING CONNECTION !");
+					break loop;
+				}
+
+				String[] split = input.split(" ");
+
 				String programName = split[0];
 				String[] args = Arrays.copyOfRange(split, 1, split.length);
 
@@ -60,7 +81,17 @@ public class Main {
 					System.out.println("no command found");
 				}
 			}
+			//endregion
 
+			level++;
+
+			if (level >= maxLevel) {
+				break;
+			}
+
+			System.out.println("\n< VICTORY: CHOOSE INDEX OF AN UPGRADE >");
+
+			//region upgrade
 			List<Upgrade> offered = new ArrayList<>(); //upgrades that can be picked
 			for (int i = 0; i < 2 && !shop.isEmpty(); i++) offered.add(shop.remove(0));
 
@@ -89,6 +120,21 @@ public class Main {
 			} else {
 				System.out.println("No upgrades detected.");
 			}
+			//endregion
+		}
+
+		if (level == maxLevel) {
+			System.out.println("< GRAND VICTORY >" +
+					"\nsystem compromised.");
+		} else {
+			System.out.println("< PANIC INITIATED >" +
+					"\nconnection terminated." +
+					"\ndefeated by gate " + level + "/" + maxLevel);
+		}
+
+		System.out.println("upgrade list ( " + upgrades.size() + "):");
+		for (Upgrade upgrade : upgrades) {
+			System.out.println("- " + upgrade.getName());
 		}
 	}
 
