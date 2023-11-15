@@ -1,11 +1,13 @@
 package main;
 
+import java.sql.RowIdLifetime;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Clip {
 
 	private final Map<Character, Integer> contents = new HashMap<>();
+	private boolean wildcard = false;
 
 	public Clip() {
 		for (char c = 'a'; c <= 'z'; c++) {
@@ -14,18 +16,26 @@ public class Clip {
 	}
 
 	public boolean has(char c) {
-		return count(c) > 0;
+		return wildcard || count(c) > 0;
 	}
 
 	public boolean has(String s) {
+		boolean hasWildcard = wildcard;
+
 		Map<Character, Integer> charCounts = new HashMap<>();
 		for (char c : s.toCharArray()) { //count characters
 			charCounts.put(c, charCounts.getOrDefault(c, 0) + 1);
 		}
 
 		for (char c : charCounts.keySet()) { //ensure enough characters in clip
-			if (charCounts.get(c) > count(c)) {
-				return false;
+			int surplus = count(c) - charCounts.get(c);
+
+			if (surplus < 0) {
+				if (surplus == -1 && hasWildcard) {
+					hasWildcard = false;
+				} else {
+					return false;
+				}
 			}
 		}
 
@@ -46,6 +56,10 @@ public class Clip {
 		contents.put(c, contents.getOrDefault(c, 0) - 1);
 	}
 
+	public void setWildcard(boolean wildcard) {
+		this.wildcard = wildcard;
+	}
+
 	public String getDisplay() {
 		StringBuilder builder = new StringBuilder();
 
@@ -58,6 +72,8 @@ public class Clip {
 				default -> Character.toUpperCase(c);
 			});
 		}
+
+		if (wildcard) builder.append("*");
 
 		return builder.toString();
 	}
