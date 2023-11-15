@@ -5,7 +5,7 @@ import main.Fight;
 public class Snip extends Program {
 
 	public Snip(Fight fight) {
-		super(fight, "snip", "[c]: expend [c] to destroy first [c] in the gate");
+		super(fight, true, "snip", "[c]: expend [c] to destroy first [c] in the gate");
 	}
 
 	@Override

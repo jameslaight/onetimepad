@@ -3,6 +3,7 @@ package main;
 import program.Program;
 import program.X;
 
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -42,6 +43,10 @@ public class Fight {
 
 	public void addProgram(Program program) {
 		programs.add(program);
+	}
+
+	public void removeProgram(Program program) {
+		programs.remove(program);
 	}
 
 }

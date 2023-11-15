@@ -5,7 +5,7 @@ import main.Fight;
 public class Rot1 extends Program {
 
 	public Rot1(Fight fight) {
-		super(fight, "rot1", "(no args): encrypt the gate with ROT1");
+		super(fight, true, "rot1", "(no args): encrypt the gate with ROT1");
 	}
 
 	@Override

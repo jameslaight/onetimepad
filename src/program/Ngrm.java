@@ -6,7 +6,8 @@ import main.Fight;
 public class Ngrm extends Program {
 
 	public Ngrm(Fight fight) {
-		super(fight, "ngrm", "[word]: expend all characters from [word] to damage them in the gate. [word] must be a valid english word (2+ letters).");
+		super(fight, true, "ngrm", "[word]: expend all characters from [word] to damage them in the gate." +
+				"\n[word] must be a valid english word (2+ letters).");
 	}
 
 	@Override

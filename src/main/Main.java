@@ -47,6 +47,10 @@ public class Main {
 
 					System.out.println(program.getName() + " " + (result.success() ? "SUCCESS" : "FAILURE") + ": " + result.message());
 
+					if (result.success() && program.isOneTimeUse()) { //most programs are one time use!
+						fight.removeProgram(program);
+					}
+
 					found = true;
 					break;
 				}

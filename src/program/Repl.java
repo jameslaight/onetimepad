@@ -5,7 +5,7 @@ import main.Fight;
 public class Repl extends Program {
 
 	public Repl(Fight fight) {
-		super(fight, "repl", "[a] [b]: replace all [a] characters in the gate with [b]");
+		super(fight, true, "repl", "[a] [b]: replace all [a] characters in the gate with [b]");
 	}
 
 	@Override
