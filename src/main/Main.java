@@ -133,6 +133,7 @@ public class Main {
 			//endregion
 		}
 
+		System.out.println();
 		if (level == maxLevel) {
 			System.out.println("< GRAND VICTORY >" +
 					"\nsystem compromised.");
