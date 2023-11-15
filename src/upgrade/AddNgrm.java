@@ -12,7 +12,7 @@ public class AddNgrm extends Upgrade {
 
 	@Override
 	public String getDescription() {
-		return "(program) destroys anagrams found in the gate";
+		return "(program) destroys anagrams (min length 2) found in the gate";
 	}
 
 	@Override

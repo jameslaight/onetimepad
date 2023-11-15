@@ -15,7 +15,7 @@ public class Ngrm extends Program {
 
 		String word = args[0];
 
-		if (!Dictionary.isWord(word)) return false;
+		if (!Dictionary.isWord(word, 2)) return false;
 
 		if (!fight.getClip().has(word)) return false;
 
