@@ -92,8 +92,8 @@ public class Gate {
 		StringBuilder builder = new StringBuilder();
 
 		builder.append(">  > >> ");
-		for (char c : code) builder.append(c);
-		builder.append(" << <  <");
+		for (char c : code) builder.append(c).append(" ");
+		builder.append("<< <  <");
 
 		return builder.toString();
 	}
