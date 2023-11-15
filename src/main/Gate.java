@@ -20,7 +20,7 @@ public class Gate {
 			chars.add(added);
 		}
 
-		int hard = difficulty / 2;
+		int hard = (difficulty - 1) / 2;
 		for (int i = 0; i < hard; i++) {
 			char added;
 			if (random.nextInt(5) == 0) added = 'q';

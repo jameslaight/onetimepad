@@ -143,7 +143,7 @@ public class Main {
 					"\ndefeated by gate " + level + "/" + maxLevel);
 		}
 
-		System.out.println("upgrade list ( " + upgrades.size() + "):");
+		System.out.println("upgrade list (" + upgrades.size() + "):");
 		for (Upgrade upgrade : upgrades) {
 			System.out.println("- " + upgrade.getName());
 		}
