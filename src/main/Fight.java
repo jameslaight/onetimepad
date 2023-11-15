@@ -13,6 +13,10 @@ public class Fight {
 		gate = new Gate(level - 1);
 	}
 
+	public int getLevel() {
+		return level;
+	}
+
 	public Clip getClip() {
 		return clip;
 	}
