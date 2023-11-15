@@ -73,7 +73,7 @@ public class Clip {
 				case 0 -> '_';
 				case 1 -> c;
 				default -> Character.toUpperCase(c);
-			}).append(" ");
+			});
 		}
 
 		if (wildcard) builder.append("*");
