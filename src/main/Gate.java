@@ -18,6 +18,16 @@ public class Gate {
 		}
 	}
 
+	public boolean has(char target) {
+		for (char c : code) {
+			if (c == target) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	public boolean isAlive() {
 		for (char c : code) {
 			if (c != '_') {
