@@ -18,7 +18,7 @@ public class X extends Program { //needed to be short for a multiuse program, no
 
 		char target = strTarget.charAt(0);
 
-		if (!fight.getClip().has(target)) return false; //ensure clip has word
+		if (!fight.getClip().has(word)) return false; //ensure clip has word
 
 		if (!fight.getGate().has(target)) return false; //ensure gate has target character
 
