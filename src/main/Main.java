@@ -42,7 +42,10 @@ public class Main {
 				for (Program program : fight.getPrograms()) {
 					if (!program.getName().equals(programName)) continue;
 
-					program.execute(args);
+					Program.Result result = program.execute(args);
+
+					System.out.println(program.getName() + " " + (result.success() ? "SUCCESS" : "FAILURE") + ": " + result.message());
+
 					break;
 				}
 			}

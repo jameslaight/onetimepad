@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Dictionary {
 
-	private static int DEFAULT_MIN_LENGTH = 4;
+	public static int DEFAULT_MIN_LENGTH = 4;
 
 	private static boolean loaded = false;
 	private static final Set<String> words = new HashSet<>();

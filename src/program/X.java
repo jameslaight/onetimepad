@@ -6,26 +6,30 @@ import main.Fight;
 public class X extends Program { //needed to be short for a multiuse program, no inspiration taken from social media sites run by megalomaniacs
 
 	public X(Fight fight) {
-		super(fight, "x");
+		super(fight, "x", "[c] [word]: expend all characters in [word] to damage first [c] in gate." +
+				"\n[word] must be a valid english word (" + Dictionary.DEFAULT_MIN_LENGTH + "+ letters)." +
+				"\n[c] must be in [word].");
 	}
 
 	@Override
-	public boolean execute(String[] args) {
-		if (args.length != 2) return false;
+	public Result execute(String[] args) {
+		if (args.length != 2) return new Result(false, "expected 2 args, got " + args.length);
 
 		String strTarget = args[0], word = args[1];
 
-		if (!Dictionary.isWord(word)) return false; //ensure word is valid word
+		if (!Dictionary.isWord(word)) return new Result(false, "'" + word + "' is not a valid " + Dictionary.DEFAULT_MIN_LENGTH + "+ letter word"); //ensure word is valid word
 
-		if (strTarget.length() != 1) return false;
+		if (strTarget.length() != 1) return new Result(false, "c must be a character");
 
 		char target = strTarget.charAt(0);
 
-		if (!fight.getClip().has(word)) return false; //ensure clip has word
+		if (target < 'a' || target > 'z') return new Result(false, "c must be a character between a-z");
 
-		if (!fight.getGate().has(target)) return false; //ensure gate has target character
+		if (!fight.getClip().has(word)) return new Result(false, "clip doesn't contain '" + word + "'"); //ensure clip has word
 
-		if (!word.contains(strTarget)) return false; //ensure word has target within it
+		if (!fight.getGate().has(target)) return new Result(false, "gate doesn't contain '" + target + "'"); //ensure gate has target character
+
+		if (!word.contains(strTarget)) return new Result(false, "'" + word + "' doesn't contain '" + target + "'"); //ensure word has target within it
 
 		fight.getGate().damageFirst(target);
 
@@ -33,7 +37,7 @@ public class X extends Program { //needed to be short for a multiuse program, no
 			fight.getClip().decrement(c);
 		}
 
-		return true;
+		return new Result(true, "destroyed '" + target + "' with '" + word + "'");
 	}
 
 }
