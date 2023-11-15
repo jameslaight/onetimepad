@@ -21,6 +21,10 @@ public class Clip {
 		return contents.getOrDefault(c, 0);
 	}
 
+	public void increment(char c) {
+		contents.put(c, contents.getOrDefault(c, 0) + 1);
+	}
+
 	public void decrement(char c) {
 		if (!has(c)) throw new IllegalArgumentException("Clip has no '" + c + "'s");
 
