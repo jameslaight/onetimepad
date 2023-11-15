@@ -5,7 +5,7 @@ import main.Fight;
 public class Help extends Program {
 
 	public Help(Fight fight) {
-		super(fight, false, "help", " [program]: if you don't know how to use this command HOW ARE YOU READING THIS");
+		super(fight, false, "help", "[program]: if you don't know how to use this command HOW ARE YOU READING THIS");
 	}
 
 	@Override
