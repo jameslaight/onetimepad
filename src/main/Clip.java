@@ -20,7 +20,7 @@ public class Clip {
 	public void decrement(char c) {
 		if (!has(c)) throw new IllegalArgumentException("Clip has no '" + c + "'s");
 
-		contents.put(c, contents.getOrDefault(c, 0));
+		contents.put(c, contents.getOrDefault(c, 0) - 1);
 	}
 
 	public String getDisplay() {
@@ -32,7 +32,7 @@ public class Clip {
 			builder.append(switch (count) {
 				case 0 -> '_';
 				case 1 -> c;
-				default -> c | 64; //uppercase
+				default -> Character.toUpperCase(c);
 			});
 		}
 

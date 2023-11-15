@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Fight {
@@ -30,6 +31,10 @@ public class Fight {
 
 	public Gate getGate() {
 		return gate;
+	}
+
+	public List<Program> getPrograms() {
+		return Collections.unmodifiableList(programs);
 	}
 
 }

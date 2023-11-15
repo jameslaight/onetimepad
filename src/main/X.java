@@ -26,6 +26,8 @@ public class X extends Program { //needed to be short for a multiuse program, no
 			}
 		}
 
+		fight.getGate().damageFirst(target);
+
 		for (char c : word.toCharArray()) { //expend all characters in word
 			fight.getClip().decrement(c);
 		}

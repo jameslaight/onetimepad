@@ -28,6 +28,20 @@ public class Gate {
 		return false;
 	}
 
+	public boolean damageFirst(char target) {
+		for (int i = 0; i < code.length; i++) {
+			char c = code[i];
+
+			if (c == target) {
+				code[i] = '_';
+
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	public boolean isAlive() {
 		for (char c : code) {
 			if (c != '_') {
@@ -41,7 +55,7 @@ public class Gate {
 	public String getDisplay() {
 		StringBuilder builder = new StringBuilder();
 
-		builder.append(">  > >>");
+		builder.append(">  > >> ");
 		for (char c : code) builder.append(c);
 		builder.append(" << <  <");
 
