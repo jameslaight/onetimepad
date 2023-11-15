@@ -1,10 +1,7 @@
 package main;
 
 import program.Program;
-import upgrade.AsAbove;
-import upgrade.SoBelow;
-import upgrade.Upgrade;
-import upgrade.Vowels;
+import upgrade.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,6 +21,7 @@ public class Main {
 		upgrades.add(new Vowels());
 		upgrades.add(new AsAbove());
 		upgrades.add(new SoBelow());
+		upgrades.add(new AddSnip());
 
 		for (int level = 1; level <= 10; level++) {
 			Fight fight = new Fight(level);
