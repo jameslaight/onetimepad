@@ -1,10 +1,6 @@
 package program;
 
-import main.Clip;
 import main.Fight;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class X extends Program { //needed to be short for a multiuse program, no inspiration taken from social media sites run by megalomaniacs
 
