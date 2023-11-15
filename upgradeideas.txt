@@ -2,9 +2,9 @@ xxxxxxxx..........
 
 CLIP UPGRADES
 wildcard - adds 1 * to your clip
-vowels - upgrades AEIOUY in your clip
-as_above - upgrades BCDFGHJKLM in your clip
-so_below - upgrades NPQRSTVWXZ in your clip
+*vowels - upgrades AEIOUY in your clip
+*as_above - upgrades BCDFGHJKLM in your clip
+*so_below - upgrades NPQRSTVWXZ in your clip
 
 PROGRAMS
 snip - snip [c]: expend [c] to destroy first [c] in the gate
