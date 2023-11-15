@@ -1,9 +1,9 @@
 package main;
 
+import program.Help;
 import program.Program;
 import program.X;
 
-import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -23,6 +23,7 @@ public class Fight {
 		gate = new Gate(level - 1);
 
 		programs.add(new X(this));
+		programs.add(new Help(this));
 	}
 
 	public int getLevel() {
