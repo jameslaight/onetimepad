@@ -21,7 +21,7 @@ public class X extends Program { //needed to be short for a multiuse program, no
 
 		char target = strTarget.charAt(0);
 
-		if (!fight.getGate().has(target)) return false; //ensure target has target character
+		if (!fight.getGate().has(target)) return false; //ensure gate has target character
 
 		if (!word.contains(strTarget)) return false; //ensure word has target within it
 
