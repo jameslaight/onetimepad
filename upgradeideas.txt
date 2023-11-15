@@ -7,7 +7,7 @@ wildcard - adds 1 * to your clip
 *so_below - upgrades NPQRSTVWXZ in your clip
 
 PROGRAMS
-snip - snip [c]: expend [c] to destroy first [c] in the gate
+*snip - snip [c]: expend [c] to destroy first [c] in the gate
 ngrm - ngrm [word]: expend all characters in [word], destroying all the first of those same characters in the gate. [word] must be a valid english word. all characters of [word] must be present in the gate
 mu2t - mu2t [c] [word]: expend all characters in [word], destroying first (n - 2) [c] characters in the gate (where n is the length of [word]. [word] must be a valid english word
 rot1 - rot1: encrypt the gate with the ROT1 cipher

@@ -40,4 +40,8 @@ public class Fight {
 		return Collections.unmodifiableList(programs);
 	}
 
+	public void addProgram(Program program) {
+		programs.add(program);
+	}
+
 }
