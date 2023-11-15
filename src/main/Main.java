@@ -32,7 +32,7 @@ public class Main {
 			upgrades.forEach(u -> u.apply(fight)); //apply upgrades to fight
 
 			while (fight.getGate().isAlive()) {
-				System.out.println("GATE:\t" + fight.getGate().getDisplay());
+				System.out.println("\nGATE:\t" + fight.getGate().getDisplay());
 				System.out.println("CLIP: " + fight.getClip().getDisplay());
 
 				String[] split = scanner.nextLine().split(" ");
