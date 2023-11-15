@@ -6,7 +6,7 @@ public class Vowels extends Upgrade {
 
 	@Override
 	public void apply(Fight fight) {
-		for (char c : new char[] {'a', 'e', 'i', 'o', 'u'}) {
+		for (char c : new char[] {'a', 'e', 'i', 'o', 'u', 'y'}) {
 			fight.getClip().increment(c);
 		}
 	}

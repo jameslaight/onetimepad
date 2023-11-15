@@ -1,6 +1,8 @@
 package main;
 
 import program.Program;
+import upgrade.AsAbove;
+import upgrade.SoBelow;
 import upgrade.Upgrade;
 import upgrade.Vowels;
 
@@ -20,6 +22,8 @@ public class Main {
 
 		List<Upgrade> upgrades = new ArrayList<>(); //all upgrades collected by the user
 		upgrades.add(new Vowels());
+		upgrades.add(new AsAbove());
+		upgrades.add(new SoBelow());
 
 		for (int level = 1; level <= 10; level++) {
 			Fight fight = new Fight(level);
