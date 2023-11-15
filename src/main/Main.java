@@ -28,7 +28,7 @@ public class Main {
 		)); //all upgrades that are yet to be acquired
 		Collections.shuffle(shop); //these are given in a random order
 
-		int maxLevel = 10;
+		int maxLevel = 8;
 		System.out.println("< WELCOME >" +
 				"\nhack thru all " + maxLevel + " GATEs, formed of characters" +
 				"\neach GATE you get letters a-z stored in your CLIP" +
