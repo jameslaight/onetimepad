@@ -1,6 +1,5 @@
 package main;
 
-import java.sql.RowIdLifetime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,7 +52,11 @@ public class Clip {
 	public void decrement(char c) {
 		if (!has(c)) throw new IllegalArgumentException("Clip has no '" + c + "'s");
 
-		contents.put(c, contents.getOrDefault(c, 0) - 1);
+		if (contents.getOrDefault(c, 0) > 0) {
+			contents.put(c, contents.get(c) - 1);
+		} else {
+			wildcard = false;
+		}
 	}
 
 	public void setWildcard(boolean wildcard) {
