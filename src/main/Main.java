@@ -39,6 +39,7 @@ public class Main {
 				String programName = split[0];
 				String[] args = Arrays.copyOfRange(split, 1, split.length);
 
+				boolean found = false;
 				for (Program program : fight.getPrograms()) {
 					if (!program.getName().equals(programName)) continue;
 
@@ -46,7 +47,12 @@ public class Main {
 
 					System.out.println(program.getName() + " " + (result.success() ? "SUCCESS" : "FAILURE") + ": " + result.message());
 
+					found = true;
 					break;
+				}
+
+				if (!found) {
+					System.out.println("no command found");
 				}
 			}
 
