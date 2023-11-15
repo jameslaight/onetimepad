@@ -33,6 +33,21 @@ public class Gate {
 		return false;
 	}
 
+	public boolean has(String s) {
+		Map<Character, Integer> charCounts = new HashMap<>();
+		for (char c : s.toCharArray()) { //count characters
+			charCounts.put(c, charCounts.getOrDefault(c, 0) + 1);
+		}
+
+		for (char c : charCounts.keySet()) { //ensure enough characters in gate
+			if (charCounts.get(c) > count(c)) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 	public int count(char target) {
 		int count = 0;
 
