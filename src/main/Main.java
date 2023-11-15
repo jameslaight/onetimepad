@@ -49,6 +49,16 @@ public class Main {
 				System.out.println("\nGATE:\t" + fight.getGate().getDisplay());
 				System.out.println("CLIP: " + fight.getClip().getDisplay());
 
+				StringBuilder builder = new StringBuilder("PRGM: ");
+				boolean first = true;
+				for (Program program : fight.getPrograms()) {
+					if (first) first = false;
+					else builder.append(", ");
+
+					builder.append(program.getName());
+				}
+				System.out.println(builder);
+
 				String input = scanner.nextLine();
 
 				if (input.equals("PANIC")) {
@@ -78,7 +88,7 @@ public class Main {
 				}
 
 				if (!found) {
-					System.out.println("no command found");
+					System.out.println("command not found");
 				}
 			}
 			//endregion
