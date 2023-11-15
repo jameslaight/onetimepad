@@ -16,7 +16,7 @@ public class Main {
 			Fight fight = new Fight(level);
 
 			while (fight.getGate().isAlive()) {
-				System.out.println(fight.getGate().getDisplay() + "\n");
+				System.out.println("\t" + fight.getGate().getDisplay());
 				System.out.println(fight.getClip().getDisplay());
 
 				String[] split = scanner.nextLine().split(" ");

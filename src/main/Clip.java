@@ -14,7 +14,11 @@ public class Clip {
 	}
 
 	public boolean has(char c) {
-		return contents.getOrDefault(c, 0) > 0;
+		return count(c) > 0;
+	}
+
+	public int count(char c) {
+		return contents.getOrDefault(c, 0);
 	}
 
 	public void decrement(char c) {

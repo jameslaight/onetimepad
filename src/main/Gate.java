@@ -33,6 +33,18 @@ public class Gate {
 		return false;
 	}
 
+	public int count(char target) {
+		int count = 0;
+
+		for (char c : code) {
+			if (c == target) {
+				count++;
+			}
+		}
+
+		return count;
+	}
+
 	public boolean damageFirst(char target) {
 		for (int i = 0; i < code.length; i++) {
 			char c = code[i];

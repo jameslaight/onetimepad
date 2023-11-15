@@ -1,5 +1,9 @@
 package main;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class X extends Program { //needed to be short for a multiuse program, no inspiration taken from social media sites run by megalomaniacs
 
 	public X(Fight fight) {
@@ -20,8 +24,13 @@ public class X extends Program { //needed to be short for a multiuse program, no
 
 		if (!word.contains(strTarget)) return false; //ensure word has target within it
 
-		for (char c : word.toCharArray()) { //ensure clip has all characters in word
-			if (!fight.getClip().has(c)) {
+		Map<Character, Integer> charCounts = new HashMap<>();
+		for (char c : word.toCharArray()) { //count characters
+			charCounts.put(c, charCounts.getOrDefault(c, 0) + 1);
+		}
+
+		for (char c : charCounts.keySet()) { //ensure enough characters in clip
+			if (charCounts.get(c) > fight.getClip().count(c)) {
 				return false;
 			}
 		}
