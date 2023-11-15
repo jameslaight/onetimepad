@@ -30,7 +30,6 @@ public class Gate {
 		}
 
 		Collections.shuffle(chars);
-		for (int i = 0; i < 10; i++) chars.add('a');
 
 		code = new char[chars.size()];
 		for (int i = 0; i < chars.size(); i++) {
