@@ -18,10 +18,6 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 
 		List<Upgrade> upgrades = new ArrayList<>(); //all upgrades collected by the user
-		upgrades.add(new Vowels());
-		upgrades.add(new AsAbove());
-		upgrades.add(new SoBelow());
-		upgrades.add(new AddSnip());
 
 		for (int level = 1; level <= 10; level++) {
 			Fight fight = new Fight(level);
