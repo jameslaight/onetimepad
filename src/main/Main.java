@@ -95,9 +95,7 @@ public class Main {
 			}
 			//endregion
 
-			level++;
-
-			if (level >= maxLevel) {
+			if (level++ > maxLevel) {
 				break;
 			}
 
