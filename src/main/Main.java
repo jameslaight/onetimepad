@@ -17,7 +17,7 @@ public class Main {
 		List<Upgrade> upgrades = new ArrayList<>(); //all upgrades collected by the user
 		List<Upgrade> shop = new ArrayList<>(List.of(
 				new AddMu2t(),
-				new AddNgrm(),
+//				new AddNgrm(), too op
 				new AddR3rr(),
 				new AddRepl(),
 				new AddRot1(),
