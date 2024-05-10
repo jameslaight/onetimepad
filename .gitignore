@@ -4,7 +4,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .gitignore
-OneTimePad.iml
+onetimepad.iml
 
 ### Eclipse ###
 .apt_generated
